@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (themeText) themeText.textContent = "Mode Gelap";
   }
 
-  // Event listener tombol switch mode yang diperbaiki
+  // Event listener tombol switch mode
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
       if (document.documentElement.classList.contains("dark")) {
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (projects.length === 0) {
-        container.innerHTML = `<p class="col-span-full text-center text-slate-400 py-8">Belum ada proyek yang terdaftar.</p>`;
+        container.innerHTML = `<p class="col-span-full text-center text-slate-400 py-8">Belum ada proyek yang ditambahkan.</p>`;
         return;
       }
 
@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
           <div>
             <div class="flex justify-between items-start gap-2 mb-3">
               <h4 class="font-bold text-slate-900 dark:text-white text-base leading-snug">${proj.judul}</h4>
-              <span class="bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 shrink-0">Aktif</span>
+              <span class="bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 text-[10px] font-semibold px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 shrink-0">Showcase</span>
             </div>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">${proj.deskripsi}</p>
           </div>
           <a href="${proj.link}" target="_blank" rel="noopener noreferrer" 
              class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-center text-xs flex items-center justify-center gap-2 transition-colors shadow-sm">
-            <span>Buka Proyek</span>
+            <span>Lihat Detail / Proyek</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
