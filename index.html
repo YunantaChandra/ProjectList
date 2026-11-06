@@ -3,54 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project List | Raymundus Erik Chandra</title>
+  <title>Project List & Directory | HR Dashboard Style</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Konfigurasi Tailwind untuk Dark Mode berbasis class -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen text-gray-800 flex flex-col justify-between">
+<body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-200">
 
   <div>
-    <!-- Header -->
-    <header class="bg-blue-600 text-white shadow-md py-4 px-6 mb-8">
-      <div class="max-w-5xl mx-auto flex justify-between items-center">
+    <!-- Top Header Ala Dashboard ZKTeco -->
+    <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 py-3 px-4 md:px-8 shadow-sm">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+        
+        <!-- Brand / Judul Kiri -->
         <div class="flex items-center gap-3">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-          </svg>
-          <h1 class="text-xl font-bold tracking-wide">Daftar Proyek & Portofolio</h1>
+          <div class="bg-emerald-600 text-white p-2 rounded-lg shadow-sm">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              HR ZKTeco Dashboard 
+              <span class="text-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-900/50 dark:text-emerald-300 px-2 py-0.5 rounded font-medium">System Directory</span>
+            </h1>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Sistem Biodata & Portofolio Proyek Internal</p>
+          </div>
         </div>
-        <span class="bg-blue-800 text-xs text-blue-100 px-3 py-1 rounded-full font-semibold border border-blue-400">IT Internal</span>
+
+        <!-- Menu Kanan: Status & Dark Mode Toggle -->
+        <div class="flex items-center gap-3">
+          <span class="hidden md:inline-flex text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-600">
+            🟢 Server Lokal (LAN)
+          </span>
+
+          <!-- Tombol Switch Dark / Light Mode -->
+          <button id="theme-toggle" class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors border border-slate-200 dark:border-slate-600">
+            <!-- Ikon Matahari (Light) -->
+            <svg id="sun-icon" class="w-4 h-4 text-amber-500 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <!-- Ikon Bulan (Dark) -->
+            <svg id="moon-icon" class="w-4 h-4 text-slate-700 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <span id="theme-text">Mode Gelap</span>
+          </button>
+        </div>
+
       </div>
     </header>
 
-    <!-- Banner Info -->
-    <main class="max-w-5xl mx-auto px-4 mb-8">
-      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl p-6 shadow-lg mb-8">
-        <h2 class="text-2xl font-bold mb-2">Direktori Aplikasi & Tools</h2>
-        <p class="text-blue-100 text-sm md:text-base">Kumpulan sistem, tools otomasi, dan aplikasi web yang telah dibangun.</p>
+    <!-- Main Banner Ala ZKTeco -->
+    <main class="max-w-7xl mx-auto px-4 md:px-8 py-6">
+      <div class="bg-gradient-to-r from-emerald-600 to-teal-700 text-white rounded-2xl p-6 md:p-8 shadow-md mb-8 relative overflow-hidden">
+        <div class="relative z-10">
+          <span class="text-xs uppercase tracking-wider bg-emerald-800/60 text-emerald-100 px-2.5 py-1 rounded font-semibold border border-emerald-500/30">Sistem Resmi Direktori</span>
+          <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-2">Manajemen Proyek & Tools Terpadu</h2>
+          <p class="text-emerald-100 text-sm md:text-base max-w-2xl leading-relaxed">
+            Pusat direktori aplikasi, script otomasi, dan sistem pendukung operasional yang terintegrasi secara real-time.
+          </p>
+        </div>
+        <!-- Efek background dekoratif tipis -->
+        <div class="absolute right-0 bottom-0 transform translate-x-10 translate-y-10 opacity-10 pointer-events-none">
+          <svg class="w-96 h-96" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+        </div>
       </div>
 
-      <!-- Container Daftar Proyek -->
+      <!-- Quick Stats / Panel Informasi Ringkas -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Total Proyek</p>
+          <p id="total-projects-stat" class="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mt-1">0</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Status Sistem</p>
+          <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-2">Active / Online</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Environment</p>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2">GitHub Pages</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-sm">
+          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Akses</p>
+          <p class="text-sm font-semibold text-slate-700 dark:text-slate-200 mt-2">Internal Team</p>
+        </div>
+      </div>
+
+      <!-- Header List Proyek -->
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+          Daftar Modul & Proyek Aktif
+        </h3>
+      </div>
+
+      <!-- Container Daftar Proyek (Grid Card ala ZKTeco) -->
       <div id="project-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Loading Indicator -->
-        <div class="col-span-full text-center py-10 text-gray-500">
-          <p>Memuat daftar proyek...</p>
+        <!-- Loading State -->
+        <div class="col-span-full text-center py-12 text-slate-400">
+          <p class="text-sm">Memuat data modul...</p>
         </div>
       </div>
     </main>
   </div>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-xs text-gray-500 border-t border-gray-200 mt-12 bg-white">
-    <p>© 2026 Raymundus Erik Chandra Yunanta. All rights reserved.</p>
+  <footer class="bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 py-4 px-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-12">
+    <p>Portal Direktori Proyek & Sistem Terpadu • Dibuat untuk Efisiensi Kerja</p>
   </footer>
 
-  <!-- Link ke script.js -->
+  <!-- Script untuk logika render & Dark Mode Toggle -->
   <script src="script.js"></script>
 </body>
 </html>
