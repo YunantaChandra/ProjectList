@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggleBtn = document.getElementById("theme-toggle");
   const themeText = document.getElementById("theme-text");
 
-  // Cek simpanan tema sebelumnya di localStorage
+  // Cek pengaturan awal tema
   if (localStorage.getItem("theme") === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add("dark");
     if (themeText) themeText.textContent = "Mode Terang";
@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (themeText) themeText.textContent = "Mode Gelap";
   }
 
-  // Event listener tombol switch mode
+  // Event listener tombol switch mode yang diperbaiki
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
       if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("theme", "light");
-        themeText.textContent = "Mode Gelap";
+        if (themeText) themeText.textContent = "Mode Gelap";
       } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("theme", "dark");
-        themeText.textContent = "Mode Terang";
+        if (themeText) themeText.textContent = "Mode Terang";
       }
     });
   }
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Render kartu proyek dengan gaya panel ZKTeco
+      // Render kartu proyek
       projects.forEach((proj) => {
         const card = document.createElement("div");
         card.className = "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md transition-all p-5 flex flex-col justify-between";
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <a href="${proj.link}" target="_blank" rel="noopener noreferrer" 
              class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-3 rounded-lg text-center text-xs flex items-center justify-center gap-2 transition-colors shadow-sm">
-            <span>Buka Modul / Proyek</span>
+            <span>Buka Proyek</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
