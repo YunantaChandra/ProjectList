@@ -10,7 +10,12 @@
     "link": "https://yunantachandra.github.io/cwii-event/"
   },
   {
-    "judul": "Tugas kuliah-Web Sederhana",
+    "judul": "Web Sederhana 2 - Pertukangan Karangmas",
+    "deskripsi": "Tugas kuliah web HTML+CSS, untuk latihan buat web.",
+    "link": "#"
+  },
+  {
+    "judul": "Web Sederhana 1 - Hobi",
     "deskripsi": "Tugas kuliah web HTML only, untuk latihan buat web.",
     "link": "https://yunantachandra.github.io/web-htmlonly-hobi/"
   },
