@@ -1,17 +1,22 @@
 [
   {
+    "judul": "Web Management Toko Karangmas",
+    "deskripsi": "Kasir, stok, dan katalog barang toko dalam satu aplikasi..",
+    "link": "https://bit.ly/Karangmas"
+  },
+  {
     "judul": "Portal Event Karyawan PT CWII",
     "deskripsi": "Sistem portal pendaftaran event dan kegiatan internal online untuk karyawan PT Combine Will Industrial Indonesia.",
     "link": "https://yunantachandra.github.io/cwii-event/"
   },
   {
-    "judul": "Automated ZKTeco Log Converter",
-    "deskripsi": "Script otomasi PowerShell & Python untuk parsing machine log absensi ZKTeco ke database payroll internal.",
-    "link": "https://github.com/YunantaChandra"
+    "judul": "Tugas kuliah-Web Sederhana",
+    "deskripsi": "Tugas kuliah web HTML only, untuk latihan buat web.",
+    "link": "https://yunantachandra.github.io/web-htmlonly-hobi/"
   },
   {
-    "judul": "Python Multi-Thread Image Scraper",
-    "deskripsi": "Tools pengunduh otomatis foto profil karyawan secara masal dari database internal perusahaan.",
-    "link": "https://github.com/YunantaChandra"
+    "judul": "Project Python belum di deploy",
+    "deskripsi": "Projet tugas kuiah python base.",
+    "link": "#"
   }
 ]
