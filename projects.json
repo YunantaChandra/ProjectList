@@ -5,6 +5,11 @@
     "link": "https://bit.ly/Karangmas"
   },
   {
+    "judul": "Doomsday Algorithm",
+    "deskripsi": "Algoritma mencari Hari dalam tanggal",
+    "link": "https://yunantachandra.github.io/doomsday-algorithm/"
+  },
+  {
     "judul": "Portal Event Karyawan PT CWII",
     "deskripsi": "Sistem portal pendaftaran event dan kegiatan internal online untuk karyawan PT Combine Will Industrial Indonesia.",
     "link": "https://yunantachandra.github.io/cwii-event/"
